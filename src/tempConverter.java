@@ -13,7 +13,7 @@ public class tempConverter {
         System.out.print("Do you wanna convert it to celsius or fahrenheit ? (C/F): ");
         unit = bleh.next().toUpperCase();
 
-        newtemp = (unit.equals("F")) ? (temp-32)*5/9 : (temp*5/9)+32;
+        newtemp = (unit.equals("C")) ? (temp-32)*5/9 : (temp*9/5)+32;
 
         System.out.printf("%.2f°%s",newtemp,unit);
         bleh.close();

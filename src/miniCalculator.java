@@ -5,6 +5,9 @@ public class miniCalculator {
        Scanner bleh = new Scanner(System.in);
        String ch;
        do{
+           System.out.print("Enter your two numbers:");
+           int a = bleh.nextInt();
+           int b = bleh.nextInt();
            System.out.println("    MINI CALCULATOR");
            System.out.println("1:ADDITION");
            System.out.println("2:SUBTRACTION");
@@ -12,10 +15,6 @@ public class miniCalculator {
            System.out.println("4:DIVISION");
            System.out.print("SELECT YOUR OPERATION:");
            int num = bleh.nextInt();
-           System.out.print("Enter your two numbers:");
-           int a = bleh.nextInt();
-           int b = bleh.nextInt();
-
            switch (num){
                case 1:
                    int sum = a + b;

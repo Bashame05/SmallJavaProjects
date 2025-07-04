@@ -8,28 +8,39 @@ public class RockPaperScissors {
         //gathering variables
         String userChoice;
         String compChoice;
-        String[] choices = {"rock" , "paper" , "scissors"};
+        String[] choices = {"rock🪨" , "paper📄" , "scissors️✂️"};
         String playAgain;
         //assigning choices
         do{
+            System.out.println("    🪨  📄  ✂️     ");
             System.out.print("Enter your move(rock/paper/scissors): ");
             userChoice = sc.nextLine().toLowerCase();
+            if(userChoice.equals("rock")){
+                userChoice += "🪨";
+            } else if (userChoice.equals("paper")) {
+                userChoice += "📄";
+            } else if (userChoice.equals("scissors")) {
+                userChoice += "✂️";
+            }
             compChoice = choices[random.nextInt(3)].toLowerCase();
-            if (!userChoice.equals("rock") && !userChoice.equals("paper") && !userChoice.equals("scissors")) {
+            if (!userChoice.equals("rock🪨") && !userChoice.equals("paper📄") && !userChoice.equals("scissors✂️")) {
                 System.out.println("Invalid input! Please enter rock, paper, or scissors.");
                 playAgain = "y";
                 continue; // Skip to next iteration
             }
 
             if(userChoice.equals(compChoice)){
+                System.out.println("The user selected : "+userChoice);
                 System.out.println("The computer selected : "+compChoice);
                 System.out.println("ITS A TIEEEEEE!!!");
-            } else if (userChoice.equals("rock") && compChoice.equals("scissors") ||
-                    userChoice.equals("paper")&&compChoice.equals("rock") ||
-                    userChoice.equals("scissors")&&compChoice.equals("paper")) {
+            } else if (userChoice.equals("rock🪨") && compChoice.equals("scissors✂️") ||
+                    userChoice.equals("paper📄")&&compChoice.equals("rock🪨") ||
+                    userChoice.equals("scissors✂️")&&compChoice.equals("paper📄")) {
+                System.out.println("The user selected : "+userChoice);
                 System.out.println("The computer selected : "+compChoice);
                 System.out.println("YAYYY YOU WONNNN!!!");
             }else{
+                System.out.println("The user selected : "+userChoice);
                 System.out.println("The computer selected : "+compChoice);
                 System.out.println("SORRYYY YOU LOSTTTTT!!!");
             }

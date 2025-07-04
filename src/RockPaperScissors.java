@@ -35,7 +35,7 @@ public class RockPaperScissors {
         //gathering variables
         String userChoice;
         String compChoice;
-        String[] choices = {"rock🪨" , "paper📄" , "scissors️✂️"};
+        String[] choices = {"rock🪨" , "paper📄" , "scissors✂️"};
         String playAgain;
         do{
             System.out.println("    🪨  📄  ✂️     ");

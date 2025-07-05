@@ -40,11 +40,16 @@ public class bankingSystem {
                     System.out.println("Invalid choice lil bro");
             }
         }
+        for(int i=0;i<10;i++){
+            System.out.println();
+        }
         System.out.println("***********************************");
         System.out.println("THANKS FOR USING OUR BANKING SYSTEM");
         System.out.println("HOPE YOU HAVE A WONDERFUL DAY😊😊😊");
         System.out.println("***********************************");
-
+        for(int i=0;i<10;i++){
+            System.out.println();
+        }
         bleh.close();
     }
     private static void showBalance(double  balance){

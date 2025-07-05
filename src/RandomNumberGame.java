@@ -8,7 +8,11 @@ public class RandomNumberGame {
         do{
             int num = rnd.nextInt(1,11);
             int tries = 3;
-            for(int i=0;i<tries;i++){
+            for(int i=0;i<=tries;i++){
+                if((i==tries)){
+                    System.out.println("Sorryyy you ran out of tries the correct answer was "+num);
+                    break;
+                }
                 System.out.print("Guess the number(between 1-10):");
                 int ans = sc.nextInt();
                 if(ans==num){
@@ -18,10 +22,6 @@ public class RandomNumberGame {
                     System.out.println("You guessed too low try a higher number.");
                 }else {
                     System.out.println("You guessed too high try a lower number.");
-                }
-                if((i==tries-1)){
-                    System.out.println("Sorryyy you ran out of tries the correct answer was "+num);
-                    break;
                 }
             }
             System.out.print("Do you want to play the game again:(y/n):");

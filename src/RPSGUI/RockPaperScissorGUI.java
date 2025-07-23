@@ -31,6 +31,8 @@ public class RockPaperScissorGUI extends JFrame implements ActionListener{
         //initialise the rockPaperScissor obj we made above
         rockPaperScissor = new RockPaperScissor();
 
+        getContentPane().setBackground(Color.PINK);
+
         //function to create our gui components
         addGuiComponents();
     }
@@ -57,6 +59,8 @@ public class RockPaperScissorGUI extends JFrame implements ActionListener{
         computerChoice.setFont(new Font("Monospaced", Font.PLAIN,18));
         computerChoice.setHorizontalAlignment(SwingConstants.CENTER);
         computerChoice.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        computerChoice.setOpaque(true);
+        computerChoice.setBackground(Color.cyan);
         add(computerChoice);
 
         //now we create the player score label
@@ -71,18 +75,24 @@ public class RockPaperScissorGUI extends JFrame implements ActionListener{
         rockButton = new JButton("Rock");
         rockButton.setBounds(40,387,105,81);
         rockButton.setFont(new Font("Dialog", Font.PLAIN,18));
+        rockButton.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        rockButton.setBackground(Color.cyan);
         rockButton.addActionListener(this);
         add(rockButton);
         //paper button
         paperButton = new JButton("Paper");
         paperButton.setBounds(165,387,105,81);
         paperButton.setFont(new Font("Dialog", Font.PLAIN,18));
+        paperButton.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        paperButton.setBackground(Color.cyan);
         paperButton.addActionListener(this);
         add(paperButton);
         //scissor button
         scissorButton = new JButton("Scissor");
         scissorButton.setBounds(290,387,105,81);
         scissorButton.setFont(new Font("Dialog", Font.PLAIN,18));
+        scissorButton.setBorder(BorderFactory.createLineBorder(Color.black,3));
+        scissorButton.setBackground(Color.cyan);
         scissorButton.addActionListener(this);
         add(scissorButton);
     }

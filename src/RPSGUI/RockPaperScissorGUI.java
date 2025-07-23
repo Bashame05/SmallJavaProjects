@@ -22,7 +22,7 @@ public class RockPaperScissorGUI extends JFrame implements ActionListener{
         setSize(450,574);
         //we set layout to null so we can add our own absolute values for it ie width height or coordinates
         setLayout(null);
-        //load our gui in the screen everytime we run it
+        //load our gui in the center of the screen everytime we run it
         setLocationRelativeTo(null);
 
         //add the default close on exit so we exit the jvm

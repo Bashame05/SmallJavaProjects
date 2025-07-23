@@ -45,7 +45,7 @@ public class loginPage extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String user = username.getText();
+        String user = username.getText().trim();
         String pass = new String(passField.getPassword());
 
         if(user.equals("admin") && pass.equals("1234")){

@@ -6,3 +6,4 @@
 6:Give me reasons we should be complete
 7:You should be with him, I can't compete
 8:You looked at me like I was someone else, oh well
+There are a total of 8 lines

@@ -21,11 +21,15 @@ public class ReadHereWriteThere {
             String line;
             //variable for numbering lines
             int num=1;
+            //counter for total number of lines
+            int count=0;
             while((line = reader.readLine()) != null){
                 writer.write(num+":"+line);
                 num++;
+                count++;
                 writer.newLine();
             }
+            writer.write("There are a total of "+count+" lines");
         } catch (IOException e) {
             System.out.println("Specified file not found "+e.getMessage());
         } catch (Exception e) {

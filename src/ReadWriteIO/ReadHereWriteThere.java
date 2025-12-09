@@ -10,31 +10,26 @@ import java.nio.file.StandardOpenOption;
 
 public class ReadHereWriteThere {
     public static void main(String[] args) {
-        readFile();
+        readWriteFile();
     }
 
-    private static void readFile() {
-        Path path = Paths.get("read.txt");
-        try(BufferedReader reader = Files.newBufferedReader(path)){
+    private static void readWriteFile() {
+        Path readPath = Paths.get("src/ReadWriteIO/read.txt");
+        Path writePath = Paths.get("src/ReadWriteIO/write.txt");
+        try(BufferedReader reader = Files.newBufferedReader(readPath);
+            BufferedWriter writer = Files.newBufferedWriter(writePath, StandardOpenOption.TRUNCATE_EXISTING)){
             String line;
+            //variable for numbering lines
+            int num=1;
             while((line = reader.readLine()) != null){
-                writeFile(line);
+                writer.write(num+":"+line);
+                num++;
+                writer.newLine();
             }
         } catch (IOException e) {
-            System.out.println("Specified file not found"+e.getMessage());
+            System.out.println("Specified file not found "+e.getMessage());
         } catch (Exception e) {
             System.out.println("Something went wrong");
         }
     }
-
-
-    private static void writeFile(String line ) {
-        Path path = Paths.get("write.txt");
-        try(BufferedWriter writer = Files.newBufferedWriter(path, StandardOpenOption.APPEND)){
-            writer.write(line+"\n");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }

@@ -24,10 +24,12 @@ public class ReadHereWriteThere {
             //counter for total number of lines
             int count=0;
             while((line = reader.readLine()) != null){
-                writer.write(num+":"+line);
-                num++;
-                count++;
-                writer.newLine();
+                if(!line.isBlank()) {
+                    writer.write(num + ":" + line.toUpperCase());
+                    num++;
+                    count++;
+                    writer.newLine();
+                }
             }
             writer.write("There are a total of "+count+" lines");
         } catch (IOException e) {

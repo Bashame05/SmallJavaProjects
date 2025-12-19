@@ -12,7 +12,7 @@ public class PasswordGenerator {
         String nums = "0123456789";
         String upper  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         String special = "!@#$%^&*";
-        String allChars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*";
+        String allChars = lower + upper + nums + special;
         int numsIdx = rnd.nextInt(nums.length());
         pass.append(nums.charAt(numsIdx));
         int upperIdx = rnd.nextInt(upper.length());

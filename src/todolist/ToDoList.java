@@ -1,5 +1,11 @@
 package todolist;
 
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -18,10 +24,12 @@ public class ToDoList {
             System.out.println("1:ADD A TASK");
             System.out.println("2:VIEW TASK");
             System.out.println("3:MARK AS DONE");
-            System.out.println("4:EXIT");
+            System.out.println("4:REMOVE TASK");
+            System.out.println("5:SAVE TASKS");
+            System.out.println("6:EXIT");
             int choice;
             try {
-                System.out.print("Enter your choice(1-3):");
+                System.out.print("Enter your choice(1-6):");
                 choice = bleh.nextInt();
                 bleh.nextLine();
             } catch (InputMismatchException e) {
@@ -41,6 +49,12 @@ public class ToDoList {
                     markTask();
                     break;
                 case 4:
+                    deleteTask();
+                    break;
+                case 5:
+                    saveTask();
+                    break;
+                case 6:
                     isRunning = false;
                     break;
                 default:
@@ -48,6 +62,31 @@ public class ToDoList {
                     break;
             }
         }
+    }
+
+    private static void saveTask(){
+        Path writePath = Paths.get("src/todolist/tasks.txt");
+        int idx = 1;
+        try{
+            BufferedWriter writer = Files.newBufferedWriter(writePath,
+                    StandardOpenOption.CREATE,StandardOpenOption.TRUNCATE_EXISTING);
+            for (Task t : tasks){
+                writer.write(idx + " " + t);
+                writer.newLine();
+                idx++;
+            }
+            writer.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private static void deleteTask() {
+        System.out.print("Enter the id of the task you want to remove:");
+        int remove = bleh.nextInt()-1;
+        bleh.nextLine();
+        tasks.remove(remove);
+        System.out.println("Task removed Successfully");
     }
 
     private static void markTask() {
@@ -68,7 +107,7 @@ public class ToDoList {
         int idx=1;
         System.out.println("***************");
         for (Task task : tasks) {
-            System.out.println(idx + ": [" + task.getStatus() + "]" + task.getTask());
+            System.out.println(idx + ":" + task);
             idx++;
         }
     }

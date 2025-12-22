@@ -25,4 +25,8 @@ public class Task {
         status = STATUS.COMPLETED;
 
     }
+    @Override
+    public String toString(){
+        return task + "[" + status + "]";
+    }
 }
